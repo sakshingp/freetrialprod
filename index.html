@@ -12,8 +12,24 @@
         h.parentNode.insertBefore(s,h);
     })(window,document);
 </script>
+<script type="text/javascript">
+    var add = (function () {
+        var counter = 0;
+        return function () {return counter += 1;}
+    })();
+    function addToCart(){
+        document.getElementById("cart").innerHTML = 'Cart value is ' + add();
+    }
+    function checkout() {
+        document.getElementById("demo").innerHTML = "Added product checked out..Goal Triggered !!";
+    }
+</script>
 </head>
 <body>
-    <h1>Welcome - sakshi.nagpal+test</h1>
+    <h1>Pushcrew Production - sakshi.nagpal+free</h1>
+    <button id="entry" onclick="addToCart()">Add to cart</button>
+    <p id="cart">Cart value is 0</p>
+    <button id="exit" onclick="checkout()">Checkout</button>
+    <p id="demo"></p>
 </body>
 </html>
